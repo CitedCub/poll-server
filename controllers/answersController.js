@@ -1,5 +1,11 @@
 var Answers = require("../models/answers");
 
+exports.answers_get = function(req, res) {
+  Answers.find().then(answersArray => {
+    res.send(JSON.stringify(answersArray));
+  });
+};
+
 exports.answers_create_post = function(req, res) {
   console.log(req.body);
   var answers = new Answers({

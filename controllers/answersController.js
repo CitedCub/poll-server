@@ -7,10 +7,10 @@ exports.answers_get = function(req, res) {
 };
 
 exports.answers_create_post = function(req, res) {
-  console.log(req.body);
+  console.log("Got requestBody: ", req.body);
   var answers = new Answers({
-    first_answer: req.body.first_answer,
-    second_answer: req.body.second_answer,
+    answers: req.body.answers,
+    questionnaire: req.body.questionnaire,
     submit_date: new Date()
   });
 

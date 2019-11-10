@@ -4,7 +4,7 @@ const app = express();
 var mongoose = require("mongoose");
 var mongoDB =
   "mongodb+srv://dbuser:OZdNx79TkvvOgENU@cluster0-2n8ue.mongodb.net/brand_insight?retryWrites=true&w=majority";
-mongoose.connect(mongoDB, { useNewUrlParser: true });
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
